@@ -1,0 +1,1122 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Namo Fashion | Women's Ethnic Wear</title>
+<meta name="description" content="Discover elegant kurtis, suit sets and lehengas at Namo Fashion.">
+
+<style>
+:root {
+  --wine: #76283c;
+  --gold: #c49a5a;
+  --cream: #fffaf5;
+  --dark: #292321;
+  --muted: #756b67;
+  --line: #eee4dc;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--dark);
+}
+button, input, select, textarea { font: inherit; }
+button { cursor: pointer; }
+a { color: inherit; text-decoration: none; }
+
+.announcement {
+  background: var(--wine);
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+.topline {
+  padding: 9px;
+  text-align: center;
+  background: #f8f0e9;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+header {
+  padding: 18px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  border-bottom: 1px solid var(--line);
+}
+.logo {
+  font-family: Georgia, serif;
+  font-size: 27px;
+  font-weight: bold;
+  color: var(--wine);
+  white-space: nowrap;
+}
+.logo small {
+  display: block;
+  font: 9px Arial, sans-serif;
+  letter-spacing: 4px;
+  text-align: center;
+  color: var(--gold);
+  margin-top: 4px;
+}
+nav {
+  display: flex;
+  gap: 20px;
+  font-size: 11px;
+  letter-spacing: .5px;
+}
+nav a:hover { color: var(--wine); }
+.icon-btn {
+  background: white;
+  border: 0;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.hero {
+  min-height: 440px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: #6e5149;
+}
+.hero > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #170e0ed9, #170e0e12);
+}
+.hero-copy {
+  position: relative;
+  z-index: 1;
+  color: white;
+  padding: 45px 8%;
+  max-width: 570px;
+}
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+.hero h1 {
+  font: normal clamp(38px, 5vw, 62px)/1.08 Georgia, serif;
+  margin: 18px 0;
+}
+.hero p { font-size: 14px; line-height: 1.8; }
+.primary {
+  display: inline-block;
+  background: var(--wine);
+  color: white;
+  border: 1px solid var(--wine);
+  padding: 14px 20px;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.primary:hover { background: #51202e; }
+.hero .primary {
+  background: white;
+  color: var(--wine);
+  border-color: white;
+  margin-top: 12px;
+}
+.section { padding: 50px 5%; }
+.section-heading {
+  text-align: center;
+  margin-bottom: 28px;
+}
+.section-heading .eyebrow { color: var(--gold); }
+.section-heading h2 {
+  font: normal 32px Georgia, serif;
+  margin: 10px 0;
+}
+.section-heading p {
+  color: var(--muted);
+  font-size: 13px;
+}
+.categories {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.category {
+  position: relative;
+  height: 310px;
+  overflow: hidden;
+  background: var(--cream);
+}
+.category img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .3s;
+}
+.category:hover img { transform: scale(1.04); }
+.category-label {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  right: 14px;
+  background: #fffaf3ed;
+  padding: 15px;
+  text-align: center;
+}
+.category-label strong {
+  display: block;
+  font: normal 21px Georgia, serif;
+  margin-bottom: 8px;
+}
+.category-label span {
+  font-size: 10px;
+  color: var(--wine);
+  letter-spacing: 1px;
+}
+.products {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+}
+.product { min-width: 0; }
+.product-photo {
+  position: relative;
+  aspect-ratio: 3/4;
+  background: #f5eee8;
+  overflow: hidden;
+}
+.product-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .3s;
+}
+.product:hover .product-photo img { transform: scale(1.03); }
+.tag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: white;
+  padding: 7px 9px;
+  font-size: 10px;
+}
+.product-info { padding: 12px 0; }
+.product-name {
+  font-size: 13px;
+  line-height: 1.5;
+  min-height: 38px;
+}
+.price {
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 7px;
+}
+.old-price {
+  text-decoration: line-through;
+  color: #968b85;
+  font-size: 12px;
+  font-weight: normal;
+  margin-left: 5px;
+}
+.product-controls {
+  display: flex;
+  gap: 6px;
+  margin-top: 12px;
+}
+.product-controls select {
+  width: 78px;
+  min-width: 0;
+  border: 1px solid var(--line);
+  padding: 9px 3px;
+  background: white;
+}
+.product-controls button {
+  flex: 1;
+  padding: 10px 4px;
+  border: 1px solid var(--wine);
+  background: white;
+  color: var(--wine);
+  font-size: 10px;
+}
+.product-controls button:hover {
+  background: var(--wine);
+  color: white;
+}
+.banner {
+  background: #f5e9df;
+  padding: 42px 15px;
+  text-align: center;
+}
+.banner h2 {
+  font: normal 30px Georgia, serif;
+  margin: 10px;
+}
+.banner p {
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--muted);
+}
+.benefits {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  padding: 30px 5%;
+  text-align: center;
+}
+.benefits strong {
+  display: block;
+  font: normal 18px Georgia, serif;
+  margin-bottom: 8px;
+}
+.benefits span {
+  font-size: 12px;
+  color: var(--muted);
+}
+footer {
+  background: var(--dark);
+  color: white;
+  padding: 42px 5% 20px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 30px;
+}
+footer .logo { color: white; }
+footer p, footer a {
+  font-size: 12px;
+  line-height: 2;
+  color: #e4d8d2;
+}
+footer h3 {
+  font: normal 18px Georgia, serif;
+}
+.copyright {
+  border-top: 1px solid #514541;
+  margin-top: 25px;
+  padding-top: 17px;
+  font-size: 11px;
+  color: #d2c3bb;
+}
+
+/* Shopping cart */
+.overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: #0007;
+  z-index: 20;
+}
+.overlay.show { display: block; }
+.drawer {
+  position: fixed;
+  z-index: 21;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: min(440px, 100%);
+  background: white;
+  transform: translateX(105%);
+  transition: transform .25s;
+  display: flex;
+  flex-direction: column;
+}
+.drawer.show { transform: translateX(0); }
+.drawer-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid var(--line);
+}
+.drawer-head h2 {
+  font: normal 23px Georgia, serif;
+  margin: 0;
+}
+.close {
+  border: 0;
+  background: none;
+  font-size: 27px;
+}
+.cart-items {
+  padding: 16px;
+  overflow: auto;
+  flex: 1;
+}
+.cart-row {
+  display: grid;
+  grid-template-columns: 72px 1fr auto;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+.cart-row img {
+  width: 72px;
+  height: 92px;
+  object-fit: cover;
+}
+.cart-row strong { font-size: 12px; line-height: 1.5; }
+.cart-row small {
+  display: block;
+  margin-top: 6px;
+  color: var(--muted);
+}
+.qty {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 9px;
+}
+.qty button {
+  background: white;
+  border: 1px solid var(--line);
+  padding: 4px 9px;
+}
+.remove {
+  border: 0;
+  background: none;
+  color: var(--wine);
+  font-size: 11px;
+  margin-top: 5px;
+}
+.cart-bottom {
+  padding: 20px;
+  border-top: 1px solid var(--line);
+}
+.total-line {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+.cart-bottom p, .notice {
+  font-size: 11px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+.cart-bottom .primary { width: 100%; }
+.checkout {
+  display: none;
+  padding: 20px;
+  overflow-y: auto;
+}
+.checkout.show { display: block; }
+.checkout h3 {
+  font: normal 25px Georgia, serif;
+}
+.checkout label {
+  display: block;
+  font-size: 12px;
+  margin-top: 9px;
+}
+.checkout input, .checkout textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--line);
+  margin-top: 6px;
+  border-radius: 0;
+  background: white;
+}
+.checkout .primary {
+  width: 100%;
+  margin-top: 18px;
+  background: #168348;
+  border-color: #168348;
+}
+.back {
+  border: 0;
+  background: none;
+  color: var(--wine);
+  padding: 8px 0;
+}
+@media(max-width:850px) {
+  nav { gap: 10px; }
+  nav a { font-size: 10px; }
+  .products { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+  .category { height: 250px; }
+}
+@media(max-width:520px) {
+  header { padding: 14px 4%; flex-wrap: wrap; }
+  .logo { font-size: 23px; }
+  nav {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    padding-top: 12px;
+    border-top: 1px solid var(--line);
+  }
+  nav a { font-size: 9px; }
+  .hero { min-height: 380px; }
+  .hero-copy { padding: 30px 6%; }
+  .section { padding: 38px 4%; }
+  .categories { gap: 9px; }
+  .category { height: 190px; }
+  .category-label {
+    left: 5px; right: 5px; bottom: 5px;
+    padding: 10px 3px;
+  }
+  .category-label strong { font-size: 15px; }
+  .products { gap: 12px; }
+  .product-name { font-size: 12px; }
+  .product-controls { flex-wrap: wrap; }
+  .product-controls select { width: 100%; }
+  .benefits { grid-template-columns: 1fr; gap: 22px; }
+  .footer-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="announcement">
+  DISCOVER YOUR STYLE · WELCOME TO NAMO FASHION
+</div>
+<div class="topline">
+  ELEGANT ETHNIC WEAR FOR EVERY OCCASION
+</div>
+
+<header>
+  <a href="#home" class="logo">
+    NAMO FASHION
+    <small>STYLE • ELEGANCE • YOU</small>
+  </a>
+
+  <nav>
+    <a href="#home">HOME</a>
+    <a href="#categories">CATEGORIES</a>
+    <a href="#products">SHOP ALL</a>
+    <a href="#products">KURTIS</a>
+    <a href="#products">LEHENGAS</a>
+  </nav>
+
+  <button class="icon-btn" onclick="openCart()">
+    BAG (<span id="cartCount">0</span>)
+  </button>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+  <img
+    src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=1800&q=85"
+    alt="Elegant ethnic fashion"
+  >
+  <div class="hero-copy">
+    <div class="eyebrow">The festive edit · Namo Fashion</div>
+    <h1>Tradition,<br>with a modern soul.</h1>
+    <p>
+      Discover elegant ethnic styles for celebrations,
+      special moments and everyday beauty.
+    </p>
+    <a href="#products">
+      <button class="primary">EXPLORE COLLECTION</button>
+    </a>
+  </div>
+</section>
+
+<section class="section" id="categories">
+  <div class="section-heading">
+    <div class="eyebrow">Find your style</div>
+    <h2>Shop By Category</h2>
+    <p>Beautiful styles for every occasion.</p>
+  </div>
+
+  <div class="categories">
+    <a class="category" href="#products">
+      <img
+        src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=700&q=80"
+        alt="Ethnic wear"
+        loading="lazy"
+      >
+      <div class="category-label">
+        <strong>Kurtis & Suits</strong>
+        <span>EXPLORE STYLES →</span>
+      </div>
+    </a>
+
+    <a class="category" href="#products">
+      <img
+        src="https://images.unsplash.com/photo-1583391733956-6c78276477e8?auto=format&fit=crop&w=700&q=80"
+        alt="Traditional clothing"
+        loading="lazy"
+      >
+      <div class="category-label">
+        <strong>Lehengas</strong>
+        <span>SHOP THE EDIT →</span>
+      </div>
+    </a>
+
+    <a class="category" href="#products">
+      <img
+        src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=700&q=80"
+        alt="Occasion wear"
+        loading="lazy"
+      >
+      <div class="category-label">
+        <strong>Occasion Wear</strong>
+        <span>DISCOVER MORE →</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section class="section" id="products">
+  <div class="section-heading">
+    <div class="eyebrow">Handpicked for you</div>
+    <h2>Our Favourite Styles</h2>
+    <p>Discover your next favourite look.</p>
+  </div>
+
+  <div class="products" id="productGrid"></div>
+</section>
+
+<section class="banner">
+  <div class="eyebrow">Made for your moments</div>
+  <h2>Your style. Your story.</h2>
+  <p>
+    From everyday elegance to festive celebrations,<br>
+    find a look that feels uniquely yours.
+  </p>
+  <a href="#products">
+    <button class="primary">SHOP THE COLLECTION</button>
+  </a>
+</section>
+
+<div class="benefits">
+  <div>
+    <strong>Beautiful Styles</strong>
+    <span>For every occasion</span>
+  </div>
+  <div>
+    <strong>Easy Ordering</strong>
+    <span>Order directly on WhatsApp</span>
+  </div>
+  <div>
+    <strong>Customer Care</strong>
+    <span>We're here to help</span>
+  </div>
+</div>
+
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="logo">NAMO FASHION</div>
+      <p>
+        Discover elegant ethnic wear for women.<br>
+        Celebrate your individual style.
+      </p>
+    </div>
+
+    <div>
+      <h3>Explore</h3>
+      <p>
+        <a href="#products">Shop All</a><br>
+        <a href="#categories">Kurtis & Suits</a><br>
+        <a href="#categories">Lehengas</a>
+      </p>
+    </div>
+
+    <div>
+      <h3>Customer Care</h3>
+      <p>
+        <a href="#home">About Us</a><br>
+        <a href="#home">Shipping Policy</a><br>
+        <a href="#home">Returns & Exchanges</a>
+      </p>
+    </div>
+  </div>
+
+  <div class="copyright">
+    © <span id="year"></span> Namo Fashion. All rights reserved.
+  </div>
+</footer>
+
+<!-- CART DRAWER -->
+<div class="overlay" id="overlay" onclick="closeCart()"></div>
+
+<aside class="drawer" id="drawer">
+  <div class="drawer-head">
+    <h2 id="drawerTitle">Your Shopping Bag</h2>
+    <button class="close" onclick="closeCart()">×</button>
+  </div>
+
+  <div class="cart-items" id="cartItems"></div>
+
+  <div class="cart-bottom" id="cartBottom">
+    <div class="total-line">
+      <span>Subtotal</span>
+      <strong id="subtotal">₹0</strong>
+    </div>
+    <p>Shipping charges, availability and delivery details will be confirmed with you.</p>
+    <button class="primary" onclick="showCheckout()">
+      PROCEED TO ORDER
+    </button>
+  </div>
+
+  <!-- WHATSAPP CHECKOUT -->
+  <div class="checkout" id="checkout">
+    <button class="back" onclick="backToCart()">← Back to bag</button>
+
+    <h3>Delivery Details</h3>
+    <p class="notice">
+      Fill in your details. Your order summary will open in WhatsApp
+      so you can review and send it to Namo Fashion.
+    </p>
+
+    <form id="checkoutForm">
+      <label for="customerName">Full Name *</label>
+      <input
+        id="customerName"
+        name="name"
+        required
+        autocomplete="name"
+        placeholder="Enter your full name"
+      >
+
+      <label for="customerPhone">Mobile Number *</label>
+      <input
+        id="customerPhone"
+        name="phone"
+        type="tel"
+        inputmode="numeric"
+        pattern="[0-9]{10}"
+        maxlength="10"
+        required
+        autocomplete="tel"
+        placeholder="10-digit mobile number"
+      >
+
+      <label for="customerEmail">Email (optional)</label>
+      <input
+        id="customerEmail"
+        name="email"
+        type="email"
+        autocomplete="email"
+        placeholder="Email address"
+      >
+
+      <label for="customerAddress">Full Delivery Address *</label>
+      <textarea
+        id="customerAddress"
+        name="address"
+        rows="3"
+        required
+        autocomplete="street-address"
+        placeholder="House number, street, area"
+      ></textarea>
+
+      <label for="customerCity">City *</label>
+      <input
+        id="customerCity"
+        name="city"
+        required
+        autocomplete="address-level2"
+        placeholder="Enter city"
+      >
+
+      <label for="customerState">State *</label>
+      <input
+        id="customerState"
+        name="state"
+        required
+        autocomplete="address-level1"
+        placeholder="Enter state"
+      >
+
+      <label for="customerPin">PIN Code *</label>
+      <input
+        id="customerPin"
+        name="pin"
+        required
+        inputmode="numeric"
+        pattern="[0-9]{6}"
+        maxlength="6"
+        autocomplete="postal-code"
+        placeholder="6-digit PIN code"
+      >
+
+      <button class="primary" type="submit">
+        ORDER ON WHATSAPP
+      </button>
+
+      <p class="notice">
+        Your WhatsApp app will open with your order details.
+        Please press Send in WhatsApp to submit your order.
+      </p>
+    </form>
+  </div>
+</aside>
+
+<script>
+/* ========================================
+   NAMO FASHION STORE SETTINGS
+
+   IMPORTANT:
+   Replace 91XXXXXXXXXX below with your
+   WhatsApp Business number, including 91.
+
+   Example format: 919876543210
+   Do not include +, spaces or dashes.
+======================================== */
+
+const WHATSAPP_NUMBER = "918696021487";
+
+/* Edit product names, prices and photos here.
+   Use your own photos or images you are
+   authorized to use. */
+
+const products = [
+  {
+    id: 1,
+    name: "Elegant Floral Suit Set",
+    price: 1899,
+    oldPrice: 2499,
+    tag: "NEW",
+    image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=700&q=80"
+  },
+  {
+    id: 2,
+    name: "Classic Festive Lehenga",
+    price: 2999,
+    oldPrice: 3999,
+    tag: "POPULAR",
+    image: "https://images.unsplash.com/photo-1583391733956-6c78276477e8?auto=format&fit=crop&w=700&q=80"
+  },
+  {
+    id: 3,
+    name: "Premium Occasion Outfit",
+    price: 2199,
+    oldPrice: 2799,
+    tag: "SALE",
+    image: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=700&q=80"
+  },
+  {
+    id: 4,
+    name: "Everyday Ethnic Kurti",
+    price: 999,
+    oldPrice: 1299,
+    tag: "BESTSELLER",
+    image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=700&q=80"
+  },
+  {
+    id: 5,
+    name: "Graceful Traditional Set",
+    price: 1799,
+    oldPrice: 2299,
+    tag: "NEW",
+    image: "https://images.unsplash.com/photo-1583391733956-6c78276477e8?auto=format&fit=crop&w=700&q=80"
+  },
+  {
+    id: 6,
+    name: "Celebration Lehenga",
+    price: 3499,
+    oldPrice: 4499,
+    tag: "POPULAR",
+    image: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=700&q=80"
+  },
+  {
+    id: 7,
+    name: "Modern Ethnic Look",
+    price: 1199,
+    oldPrice: 1599,
+    tag: "SALE",
+    image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=700&q=80"
+  },
+  {
+    id: 8,
+    name: "Festive Signature Set",
+    price: 2499,
+    oldPrice: 3299,
+    tag: "NEW",
+    image: "https://images.unsplash.com/photo-1583391733956-6c78276477e8?auto=format&fit=crop&w=700&q=80"
+  }
+];
+
+const cart = [];
+
+const rupees = amount =>
+  "₹" + amount.toLocaleString("en-IN");
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+/* DISPLAY PRODUCTS */
+
+const productGrid = document.getElementById("productGrid");
+
+productGrid.innerHTML = products.map(product => `
+  <article class="product">
+    <div class="product-photo">
+      <img
+        src="${product.image}"
+        alt="${product.name}"
+        loading="lazy"
+      >
+      <span class="tag">${product.tag}</span>
+    </div>
+
+    <div class="product-info">
+      <div class="product-name">${product.name}</div>
+
+      <div class="price">
+        ${rupees(product.price)}
+        <span class="old-price">${rupees(product.oldPrice)}</span>
+      </div>
+
+      <div class="product-controls">
+        <select id="size-${product.id}" aria-label="Select size">
+          <option value="S">Size S</option>
+          <option value="M" selected>Size M</option>
+          <option value="L">Size L</option>
+          <option value="XL">Size XL</option>
+          <option value="XXL">Size XXL</option>
+        </select>
+
+        <button onclick="addToCart(${product.id})">
+          ADD TO BAG +
+        </button>
+      </div>
+    </div>
+  </article>
+`).join("");
+
+/* CART FUNCTIONS */
+
+function addToCart(id) {
+  const product = products.find(item => item.id === id);
+  const size = document.getElementById("size-" + id).value;
+
+  const existing = cart.find(item =>
+    item.id === id && item.size === size
+  );
+
+  if (existing) {
+    existing.qty++;
+  } else {
+    cart.push({
+      ...product,
+      size: size,
+      qty: 1
+    });
+  }
+
+  updateCart();
+  openCart();
+}
+
+function updateCart() {
+  const count = cart.reduce(
+    (sum, item) => sum + item.qty, 0
+  );
+
+  const total = cart.reduce(
+    (sum, item) => sum + item.price * item.qty, 0
+  );
+
+  document.getElementById("cartCount").textContent = count;
+  document.getElementById("subtotal").textContent = rupees(total);
+
+  const cartItems = document.getElementById("cartItems");
+
+  if (cart.length === 0) {
+    cartItems.innerHTML =
+      "<p>Your bag is empty. Explore our collection!</p>";
+    return;
+  }
+
+  cartItems.innerHTML = cart.map(item => `
+    <div class="cart-row">
+      <img src="${item.image}" alt="${item.name}">
+
+      <div>
+        <strong>${item.name}</strong>
+        <small>Size: ${item.size}</small>
+        <small>${rupees(item.price)}</small>
+
+        <div class="qty">
+          <button
+            onclick="changeQty(${item.id},'${item.size}',-1)"
+            aria-label="Decrease quantity"
+          >−</button>
+
+          <span>${item.qty}</span>
+
+          <button
+            onclick="changeQty(${item.id},'${item.size}',1)"
+            aria-label="Increase quantity"
+          >+</button>
+        </div>
+
+        <button
+          class="remove"
+          onclick="removeItem(${item.id},'${item.size}')"
+        >Remove</button>
+      </div>
+
+      <strong>${rupees(item.price * item.qty)}</strong>
+    </div>
+  `).join("");
+}
+
+function changeQty(id, size, delta) {
+  const item = cart.find(x =>
+    x.id === id && x.size === size
+  );
+
+  if (!item) return;
+
+  item.qty += delta;
+
+  if (item.qty <= 0) {
+    removeItem(id, size);
+  } else {
+    updateCart();
+  }
+}
+
+function removeItem(id, size) {
+  const index = cart.findIndex(x =>
+    x.id === id && x.size === size
+  );
+
+  if (index !== -1) {
+    cart.splice(index, 1);
+  }
+
+  updateCart();
+}
+
+/* OPEN AND CLOSE CART */
+
+function openCart() {
+  document.getElementById("overlay").classList.add("show");
+  document.getElementById("drawer").classList.add("show");
+}
+
+function closeCart() {
+  document.getElementById("overlay").classList.remove("show");
+  document.getElementById("drawer").classList.remove("show");
+}
+
+function showCheckout() {
+  if (cart.length === 0) {
+    alert("Please add a product to your bag first.");
+    return;
+  }
+
+  document.getElementById("cartItems").style.display = "none";
+  document.getElementById("cartBottom").style.display = "none";
+  document.getElementById("checkout").classList.add("show");
+
+  document.getElementById("drawerTitle").textContent =
+    "Delivery Details";
+}
+
+function backToCart() {
+  document.getElementById("checkout").classList.remove("show");
+  document.getElementById("cartItems").style.display = "block";
+  document.getElementById("cartBottom").style.display = "block";
+
+  document.getElementById("drawerTitle").textContent =
+    "Your Shopping Bag";
+}
+
+/* ORDER ON WHATSAPP */
+
+document.getElementById("checkoutForm")
+  .addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    if (cart.length === 0) {
+      alert("Your cart is empty.");
+      return;
+    }
+
+    if (
+      !/^[1-9]\d{9,14}$/.test(WHATSAPP_NUMBER) ||
+      WHATSAPP_NUMBER === "91XXXXXXXXXX"
+    ) {
+      alert(
+        "Please set your WhatsApp number in the code first. " +
+        "Replace 91XXXXXXXXXX with your number including country code."
+      );
+      return;
+    }
+
+    const form = new FormData(this);
+
+    const customerName = form.get("name").trim();
+    const phone = form.get("phone").trim();
+    const email = form.get("email").trim();
+    const address = form.get("address").trim();
+    const city = form.get("city").trim();
+    const state = form.get("state").trim();
+    const pin = form.get("pin").trim();
+
+    const total = cart.reduce(
+      (sum, item) => sum + item.price * item.qty, 0
+    );
+
+    const itemDetails = cart.map((item, index) =>
+      `${index + 1}. ${item.name}\n` +
+      `   Size: ${item.size}\n` +
+      `   Quantity: ${item.qty}\n` +
+      `   Price: ${rupees(item.price * item.qty)}`
+    ).join("\n\n");
+
+    const message =
+`NAMO FASHION - NEW ORDER
+
+Customer Name: ${customerName}
+Mobile: ${phone}
+Email: ${email || "Not provided"}
+
+DELIVERY ADDRESS
+${address}
+City: ${city}
+State: ${state}
+PIN Code: ${pin}
+
+ORDER DETAILS
+${itemDetails}
+
+TOTAL PRODUCT AMOUNT: ${rupees(total)}
+
+Please confirm product availability,
+shipping charges and final order total.
+Thank you!`;
+
+    const whatsappURL =
+      "https://wa.me/" + WHATSAPP_NUMBER +
+      "?text=" + encodeURIComponent(message);
+
+    // Open WhatsApp so the customer can review and send the order.
+    const whatsappWindow = window.open(
+      whatsappURL,
+      "_blank",
+      "noopener,noreferrer"
+    );
+
+    // Some mobile browsers may block new windows.
+    if (!whatsappWindow) {
+      window.location.href = whatsappURL;
+    }
+  });
+
+updateCart();
+</script>
+
+</body>
+</html>
